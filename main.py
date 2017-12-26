@@ -11,11 +11,11 @@ while True:
     if again.lower() == "n":
         break
 
-    print "Menu '%s' :" % menu
 
 with open("menu.txt", "w+") as menu_file:  # opens and overwrites previous file (w+)
-    for food in menu:
+    for food, price in menu.iteritems():
         menu_file.write("%s, %s EUR\n" % (food, menu[food]))  # write text into file with new line  - (\n)
 
+print "Menu '%s' " % menu
 print "Goodbye!"
 
